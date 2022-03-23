@@ -1,23 +1,29 @@
 <template>
-  <h1>Hello corona</h1>
-  <el-row class="mb-4">
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-    <el-button>中文</el-button>
-  </el-row>
+  <BasicLayout @menuSelect="(item) => { content=item}">
+    <MainContent :content="content"/>
+  </BasicLayout>
 </template>
+
 
 <script>
 
+import BasicLayout from "@/components/layouts/BasicLayout";
+import MainContent from "@/components/layouts/MainContent";
+
 export default {
   name: 'App',
-  components: {
-  }
-}
+  components: {MainContent, BasicLayout},
+  data() {
+    return {
+      content: {
+        label: "대시보드",
+        index: "Dashboard",
+        path: "main",
+
+      },
+    };
+  },
+};
 </script>
 
 <style>
