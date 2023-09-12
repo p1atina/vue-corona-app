@@ -11,7 +11,7 @@ while True:
         print("||||F11111")
         break
     if b'CConsoleServer::initialize() [127.0.0.1:35000] initialized' in output:
-        process.terminate()
+        process.kill()
         print("||||F22222")
         break
     if output:
