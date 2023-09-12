@@ -10,7 +10,7 @@ while True:
     if output == b'' and process.poll() is not None:
         print("||||F11111")
         break
-    if b'mpeg4' in output:
+    if b'CConsoleServer::initialize() [127.0.0.1:35000] initialized' in output:
         process.terminate()
         print("||||F22222")
         break
