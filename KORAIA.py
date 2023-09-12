@@ -4,6 +4,7 @@ process = subprocess.Popen("./sp_firedetect", stdout=subprocess.PIPE, shell=True
 
 while True:
     output = process.stdout.readline()
+    print(output)
     if output == b'' and process.poll() is not None:
         break
     if b'mpeg4' in output:
